@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { SharedService } from '../../shared/shared.service';
 
 @Component({
@@ -8,8 +8,11 @@ import { SharedService } from '../../shared/shared.service';
 })
 export class Header {
   userData: any;
-  constructor(private shared: SharedService) {
-    this.userData = this.shared.getUser();
-    console.log(this.userData);
+  constructor(private shared: SharedService) {}
+
+  ngOnInit() {
+    this.shared.userSelected.subscribe((user: any) => {
+      this.userData = user;
+    });
   }
 }

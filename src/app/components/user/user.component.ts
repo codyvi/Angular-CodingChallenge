@@ -11,6 +11,6 @@ export class User {
 
   constructor(private shared: SharedService) {}
   sendInfo() {
-    this.shared.setUser(this.userInfo);
+    this.shared.userSelected.emit(this.userInfo)
   }
 }

@@ -1,8 +1,7 @@
 <div class="user-container">
   <div class="user-info">
     <span>Name: {{ userInfo.name }}</span>
-    <span *ngIf="userInfo.status == true">Status: Active</span>
-    <span *ngIf="userInfo.status != true">Status: Inactive</span>
+    <span>Status: {{ userInfo.status ? 'Active' : 'Inactive' }}</span>
   </div>
   <button (click)="sendInfo()" type="button">Show</button>
 </div>

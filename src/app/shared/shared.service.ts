@@ -1,20 +1,19 @@
 import { importType } from '@angular/compiler/src/output/output_ast';
 
-import { Injectable } from '@angular/core';
+import { Injectable, EventEmitter } from '@angular/core';
 
 @Injectable({
   providedIn: 'root',
 })
 export class SharedService {
   user: any;
-  constructor() {
-
-  }
-  setUser(data){
+  constructor() {}
+  userSelected = new EventEmitter<any>();
+  setUser(data) {
     this.user = data;
   }
 
-  getUser(){
+  getUser() {
     return this.user;
   }
 }

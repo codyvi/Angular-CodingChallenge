@@ -1,6 +1,10 @@
 <ul class="header-container">
-  <li>Name: [NAME]</li>
-  <li>Date: [DATE]</li>
-  <li>Description: [DESCRIPTION]</li>
-  <li>Status: [STATUS]</li>
+  <li *ngIf="userData">Name: {{ userData.name }}</li>
+  <li *ngIf="userData">
+    Date: {{ userData.date | date: 'MM/dd/yy,  hh:mm:s aa' }}
+  </li>
+  <li *ngIf="userData">Description: {{ userData.description }}</li>
+  <li *ngIf="userData">
+    Status: {{ userData.status ? 'Active' : 'Inactive' }}
+  </li>
 </ul>
